@@ -42,11 +42,10 @@ public class LivroService {
     }
 
 
-    public boolean delete(LivroDTO livroDTO) {
-        if (livroDTO != null) {
-            if (livroRepositorio.existsById(livroDTO.getId())) {
-                Livro mapped = livroMapper.DTOtoLivro(livroDTO);
-                livroRepositorio.delete(mapped);
+    public boolean delete(Long id) {
+        if (id != null) {
+            if (livroRepositorio.existsById(id)) {
+                livroRepositorio.deleteById(id);
                 return true;
             }
         }

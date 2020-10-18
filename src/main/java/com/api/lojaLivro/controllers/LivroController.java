@@ -29,8 +29,8 @@ public class LivroController {
         return livroService.create(livroDTO);
     }
 
-    @DeleteMapping
-    public boolean delete(@RequestBody LivroDTO livro) {
-        return livroService.delete(livro);
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable Long id) {
+        return livroService.delete(id);
     }
 }

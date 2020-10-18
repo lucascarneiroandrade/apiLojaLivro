@@ -4,13 +4,10 @@ import com.api.lojaLivro.dto.AluguelDTO;
 import com.api.lojaLivro.mappers.AluguelMapper;
 import com.api.lojaLivro.mappers.LivroMapper;
 import com.api.lojaLivro.models.Aluguel;
-import com.api.lojaLivro.models.Livro;
 import com.api.lojaLivro.repositorios.AluguelRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Duration;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

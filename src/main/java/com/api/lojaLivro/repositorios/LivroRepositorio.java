@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LivroRepositorio extends JpaRepository<Livro, Long> {
-    Livro findByTitle(String titulo);
+    Livro findByTitulo(String titulo);
 }
