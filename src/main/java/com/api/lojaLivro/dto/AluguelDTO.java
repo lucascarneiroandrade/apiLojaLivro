@@ -1,6 +1,7 @@
 package com.api.lojaLivro.dto;
 
 import com.api.lojaLivro.models.Livro;
+import com.api.lojaLivro.models.Usuario;
 import com.sun.istack.NotNull;
 
 import javax.validation.constraints.PositiveOrZero;
@@ -20,8 +21,8 @@ public class AluguelDTO {
     private LocalDate devolucaoData;
     private boolean devolvido;
 
-    /*@NotNull
-    private Usuario usuario;*/
+    @NotNull
+    private Usuario usuario;
 
     @PositiveOrZero
     private Float penalidade;
@@ -72,5 +73,13 @@ public class AluguelDTO {
 
     public void setPenalidade(Float penalidade) {
         this.penalidade = penalidade;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

@@ -34,11 +34,10 @@ public class Aluguel {
     @Column(name = "devolvido")
     private boolean devolvido;
 
-    /*
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
-    */
+
     @Column(name = "penalidade")
     private Float penalidade;
 

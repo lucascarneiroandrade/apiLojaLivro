@@ -25,7 +25,6 @@ public class LivroMapper {
             return null;
         } else {
             Livro livro = new Livro();
-            livro.setId(livroDTO.getId());
             livro.setTitulo(livroDTO.getTitulo());
             livro.setAlugado(livroDTO.isAlugado());
 

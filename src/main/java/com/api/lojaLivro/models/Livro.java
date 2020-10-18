@@ -1,6 +1,8 @@
 package com.api.lojaLivro.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -25,6 +27,7 @@ public class Livro {
     @Column(name = "alugado")
     private boolean alugado;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "livro", cascade = CascadeType.ALL)
     private List<Aluguel> aluguel;
 
