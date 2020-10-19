@@ -1,4 +1,4 @@
-# Solução para o Desafio loja de aluguel de livros - React - Digivox
+# Solução para o Desafio loja de aluguel de livros - Digivox
 
 
 
