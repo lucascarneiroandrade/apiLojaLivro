@@ -36,7 +36,7 @@ public class AluguelMapper {
             aluguel.setDevolvido(aluguelDTO.isDevolvido());
             aluguel.setLivro(aluguelDTO.getLivro());
             aluguel.setDevolucaoData(aluguelDTO.getDevolucaoData());
-            //aluguel.setUsuario(aluguelDTO.getUsuario());
+            aluguel.setUsuario(aluguelDTO.getUsuario());
             aluguel.setAluguelData(aluguelDTO.getAluguelData());
             return aluguel;
         }

@@ -1,6 +1,7 @@
 package com.api.lojaLivro.services;
 
 import com.api.lojaLivro.dto.UsuarioDTO;
+import com.api.lojaLivro.exception.EntidadeNaoEncontradaException;
 import com.api.lojaLivro.mappers.UsuarioMapper;
 import com.api.lojaLivro.models.Usuario;
 import com.api.lojaLivro.repositories.UsuarioRepository;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service("usuarioService")
 public class UsuarioService {
@@ -41,9 +43,17 @@ public class UsuarioService {
         return usuariosDTO;
     }
 
-    public UsuarioDTO update(UsuarioDTO usuario) {
+    public UsuarioDTO update(Long id, UsuarioDTO usuarioDTO) {
+        Optional<Usuario> talvezUsuario = usuarioRepository.findById(id);
+        Usuario usuario = null;
+        if (talvezUsuario.isEmpty()) {
+            throw new EntidadeNaoEncontradaException("Usuário não encontrado");
+        }
+        usuario = talvezUsuario.get();
+
         if (usuario != null) {
-            Usuario mapped = usuarioMapper.DTOtoUsuario(usuario);
+            Usuario mapped = usuarioMapper.DTOtoUsuario(usuarioDTO);
+            mapped.setId(usuario.getId());
             return usuarioMapper.usuarioToDTO(usuarioRepository.save(mapped));
         }
         return null;

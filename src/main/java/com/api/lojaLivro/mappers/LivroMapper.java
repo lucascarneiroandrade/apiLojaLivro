@@ -13,7 +13,9 @@ public class LivroMapper {
             LivroDTO livroDTO = new LivroDTO();
             livroDTO.setId(livro.getId());
             livroDTO.setTitulo(livro.getTitulo());
+            livroDTO.setAutor(livro.getAutor());
             livroDTO.setAlugado(livro.isAlugado());
+            livroDTO.setReservado(livro.isReservado());
 
             return livroDTO;
 
@@ -26,7 +28,9 @@ public class LivroMapper {
         } else {
             Livro livro = new Livro();
             livro.setTitulo(livroDTO.getTitulo());
+            livro.setAutor(livroDTO.getAutor());
             livro.setAlugado(livroDTO.isAlugado());
+            livro.setReservado(livroDTO.isReservado());
 
             return livro;
         }

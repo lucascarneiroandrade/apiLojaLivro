@@ -29,6 +29,11 @@ public class LivroController {
         return livroService.create(livroDTO);
     }
 
+    @PutMapping("/{id}")
+    public LivroDTO update(@PathVariable Long id, @Valid @RequestBody LivroDTO livroDTO) {
+        return livroService.update(id, livroDTO);
+    }
+
     @DeleteMapping("/{id}")
     public boolean delete(@PathVariable Long id) {
         return livroService.deleteById(id);
